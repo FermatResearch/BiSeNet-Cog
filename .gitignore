@@ -1,0 +1,4 @@
+.cog/
+.dockerignore
+.ipynb_checkpoints/
+__pycache/

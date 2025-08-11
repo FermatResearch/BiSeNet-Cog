@@ -1,0 +1,11 @@
+build:
+  gpu: true
+  python_version: "3.11"
+  python_requirements: requirements.txt
+  run:
+    - apt-get update && apt-get install -y wget ca-certificates && rm -rf /var/lib/apt/lists/*
+    - mkdir -p weights
+    - wget -q -O weights/resnet18.pt  https://github.com/yakhyo/face-parsing/releases/download/v0.0.1/resnet18.pt
+    - wget -q -O weights/resnet34.pt  https://github.com/yakhyo/face-parsing/releases/download/v0.0.1/resnet34.pt
+
+predict: "predict.py:Predictor"
